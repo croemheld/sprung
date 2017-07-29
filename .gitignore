@@ -3,3 +3,4 @@ Sprung/obj/
 SprungSetup/Debug/
 *.suo
 packages/
+.vs/config/applicationhost.config

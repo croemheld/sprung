@@ -24,8 +24,8 @@ namespace Sprung
         protected Icon icon = null;
         protected bool isIconQueried = false;
 
-        int matchingPriority;
-        int matchingGroups;
+        double matchingPriority;
+        //int matchingGroups;
 
         public Window(IntPtr handle)
         {
@@ -103,31 +103,37 @@ namespace Sprung
         {
             return noTitle;
         }
-      
-        public int getMatchingPriority()
+
+        public double getMatchingPriority()
         {
             return this.matchingPriority;
         }
 
-        public void setMatchingPriority(int matchingPriority)
+        public void setMatchingPriority(double matchingPriority)
         {
             this.matchingPriority = matchingPriority;
         }
 
-        public int getMatchingGroups()
-        {
-            return this.matchingGroups;
-        }
+        //public int getMatchingGroups()
+        //{
+        //    return this.matchingGroups;
+        //}
 
-        public void setMatchingGroups(int matchingGroups)
-        {
-            this.matchingGroups = matchingGroups;
-        }
+        //public void setMatchingGroups(int matchingGroups)
+        //{
+        //    this.matchingGroups = matchingGroups;
+        //}
 
         public int CompareTo(Window other)
         {
+<<<<<<< Updated upstream
             return (getMatchingPriority() < other.getMatchingPriority()) ? 1 : (getMatchingPriority() > other.getMatchingPriority()) ? -1 :
                 (getMatchingGroups() < other.getMatchingGroups()) ? -1 : (getMatchingGroups() > other.getMatchingGroups()) ? 1 : 0;
+=======
+            //return (getMatchingGroups() < other.getMatchingGroups()) ? 1 : (getMatchingGroups() > other.getMatchingGroups()) ? -1 :
+            //    (getMatchingPriority() < other.getMatchingPriority()) ? 1 : (getMatchingPriority() > other.getMatchingPriority()) ? -1 : 0;
+            return (getMatchingPriority() < other.getMatchingPriority()) ? -1 : (getMatchingPriority() > other.getMatchingPriority()) ? 1 : 0; 
+>>>>>>> Stashed changes
         }
 
         public Icon getIcon()
