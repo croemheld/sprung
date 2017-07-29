@@ -25,7 +25,6 @@ namespace Sprung
         protected bool isIconQueried = false;
 
         int matchingPriority;
-        int matchingGroups;
 
         public Window(IntPtr handle)
         {
@@ -112,16 +111,6 @@ namespace Sprung
         public void setMatchingPriority(int matchingPriority)
         {
             this.matchingPriority = matchingPriority;
-        }
-
-        public int getMatchingGroups()
-        {
-            return this.matchingGroups;
-        }
-
-        public void setMatchingGroups(int matchingGroups)
-        {
-            this.matchingGroups = matchingGroups;
         }
 
         public int CompareTo(Window other)
