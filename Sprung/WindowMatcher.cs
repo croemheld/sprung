@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Sprung
 {
@@ -26,33 +27,13 @@ namespace Sprung
             {
                 String title = window.getTitle().ToLower();
                 pattern = pattern.ToLower();
-                int matchingGroups = 0;
-                int matchingChars = 0;
-                int titleCharPos = 0;
-                int textCharPos = 0;
-                bool lastMatched = false;
 
-                while (titleCharPos < title.Length && textCharPos < pattern.Length)
-                {
-                    char titleChar = title[titleCharPos];
-                    char textChar = pattern[textCharPos];
-                    if (titleChar == textChar)
-                    {
-                        titleCharPos++;
-                        textCharPos++;
-                        matchingChars++;
-                        if (!lastMatched) matchingGroups++;
-                        lastMatched = true;
-                    }
-                    else
-                    {
-                        titleCharPos++;
-                        lastMatched = false;
-                    }
-                }
+                int count, value = 0;
 
-                window.setMatchingPriority(matchingChars);
-                window.setMatchingGroups(matchingGroups);
+                count = Regex.Matches(Regex.Escape(title), pattern).Count;
+                value = pattern.Length * count;
+
+                window.setMatchingPriority(value);
             }
 
             windows.Sort();
