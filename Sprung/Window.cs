@@ -126,8 +126,8 @@ namespace Sprung
 
         public int CompareTo(Window other)
         {
-            return (getMatchingPriority() < other.getMatchingPriority()) ? 1 : (getMatchingPriority() > other.getMatchingPriority()) ? -1 :
-                (getMatchingGroups() < other.getMatchingGroups()) ? -1 : (getMatchingGroups() > other.getMatchingGroups()) ? 1 : 0;
+            return (getMatchingGroups() < other.getMatchingGroups()) ? 1 : (getMatchingGroups() > other.getMatchingGroups()) ? -1 :
+                (getMatchingPriority() < other.getMatchingPriority()) ? 1 : (getMatchingPriority() > other.getMatchingPriority()) ? -1 : 0;
         }
 
         public Icon getIcon()
