@@ -25,7 +25,6 @@ namespace Sprung
         protected bool isIconQueried = false;
 
         double matchingPriority;
-        //int matchingGroups;
 
         public Window(IntPtr handle)
         {
@@ -114,20 +113,8 @@ namespace Sprung
             this.matchingPriority = matchingPriority;
         }
 
-        //public int getMatchingGroups()
-        //{
-        //    return this.matchingGroups;
-        //}
-
-        //public void setMatchingGroups(int matchingGroups)
-        //{
-        //    this.matchingGroups = matchingGroups;
-        //}
-
         public int CompareTo(Window other)
         {
-            //return (getMatchingGroups() < other.getMatchingGroups()) ? 1 : (getMatchingGroups() > other.getMatchingGroups()) ? -1 :
-            //    (getMatchingPriority() < other.getMatchingPriority()) ? 1 : (getMatchingPriority() > other.getMatchingPriority()) ? -1 : 0;
             return (getMatchingPriority() < other.getMatchingPriority()) ? -1 : (getMatchingPriority() > other.getMatchingPriority()) ? 1 : 0;
         }
 

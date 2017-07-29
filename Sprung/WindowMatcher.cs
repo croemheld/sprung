@@ -90,39 +90,6 @@ namespace Sprung
                 int maxweight = 1;
                 double lengthweight = -0.3;
 
-                //String[] words = title.Split(' ');
-
-                // Matched substrings in title
-                //matchingGroups = Regex.Matches(Regex.Escape(title), pattern).Count;
-
-                // To calculate the Hamming distance for every tag
-                //Dictionary<String, Tuple<int, int>> dictionary = new Dictionary<String, Tuple<int, int>>();
-
-                //foreach (String word in words)
-                //{
-                //    if (dictionary.ContainsKey(word))
-                //    {
-                //        // Since tuples are immutable, we need to create a new tuple
-                //        dictionary[word] = new Tuple<int, int>(dictionary[word].Item1 + 1, 0);
-                //    }
-                //    else
-                //    {
-                //        dictionary.Add(word, new Tuple<int, int>(1, 0));
-                //    }
-                //}
-
-                // To avoid InvalidOperationException
-                //String[] keys = dictionary.Keys.ToArray();
-
-                // Levenshtein distance for each title word and the given pattern
-                //foreach(String item in keys)
-                //{
-                //    Tuple<int, int> value = dictionary[item];
-                //    dictionary[item] = new Tuple<int, int>(value.Item1, levenshteinDistance(item, pattern) / item.Length);
-                //}
-
-                //matchingChars = dictionary.Select(entry => entry.Value.Item2).Sum();
-
                 double vp = valuePhrase(pattern, title) - 0.8 * Math.Abs(title.Length - pattern.Length);
                 double vw = valueWords(pattern, title);
                 double sv = Math.Min(vp, vw) * 0.8 + Math.Max(vp, vw) * 0.2;
@@ -132,7 +99,6 @@ namespace Sprung
                              + lengthweight * pattern.Length;
 
                 window.setMatchingPriority(value);
-                //window.setMatchingGroups(matchingGroups);
             }
 
             windows.Sort();
