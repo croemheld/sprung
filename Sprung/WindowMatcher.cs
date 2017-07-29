@@ -19,8 +19,6 @@ namespace Sprung
             return match(pattern, windowManager.getProcesses());
         }
 
-<<<<<<< Updated upstream
-=======
         private int levenshteinDistance(String s, String t)
         {
             int n = s.Length;
@@ -77,8 +75,7 @@ namespace Sprung
 
             return total;
         }
-
->>>>>>> Stashed changes
+        
         public List<Window> match(String pattern, List<Window> windows)
         {
             if (pattern.Length == 0) return windows;
@@ -86,35 +83,6 @@ namespace Sprung
             {
                 String title = window.getTitle().ToLower();
                 pattern = pattern.ToLower();
-<<<<<<< Updated upstream
-                int matchingGroups = 0;
-                int matchingChars = 0;
-                int titleCharPos = 0;
-                int textCharPos = 0;
-                bool lastMatched = false;
-
-                while (titleCharPos < title.Length && textCharPos < pattern.Length)
-                {
-                    char titleChar = title[titleCharPos];
-                    char textChar = pattern[textCharPos];
-                    if (titleChar == textChar)
-                    {
-                        titleCharPos++;
-                        textCharPos++;
-                        matchingChars++;
-                        if (!lastMatched) matchingGroups++;
-                        lastMatched = true;
-                    }
-                    else
-                    {
-                        titleCharPos++;
-                        lastMatched = false;
-                    }
-                }
-
-                window.setMatchingPriority(matchingChars);
-                window.setMatchingGroups(matchingGroups);
-=======
 
                 double phraseweight = 0.5;
                 double wordweight = 1.0;
@@ -165,7 +133,6 @@ namespace Sprung
 
                 window.setMatchingPriority(value);
                 //window.setMatchingGroups(matchingGroups);
->>>>>>> Stashed changes
             }
 
             windows.Sort();
